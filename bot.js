@@ -16,11 +16,12 @@ bot.start((ctx) => ctx.reply('Welcome'))
 bot.command('results', async ctx => {
   await img()
   await ctx.replyWithPhoto({ source: 'public/clip.png' })
+  await ctx.reply('Hello')
 })
 
-setInterval(() => {
-  http.get(`${process.env.URL}`)
-}, 300000)
+// setInterval(() => {
+//   http.get(`${process.env.URL}`)
+// }, 300000)
 
 app.get('/', (req, res) => {
   res.send('Hello World')
