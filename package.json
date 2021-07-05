@@ -2,20 +2,25 @@
   "name": "playwrightbot",
   "version": "1.0.0",
   "description": "",
-  "engines": {
-    "node": "14.x"
-  },
   "main": "bot.js",
   "scripts": {
-    "start": "node bot.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/temurqalandarov/playwrightbot.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/temurqalandarov/playwrightbot/issues"
+  },
+  "homepage": "https://github.com/temurqalandarov/playwrightbot#readme",
   "dependencies": {
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "playwright": "^1.12.3",
+    "playwright-chromium": "^1.12.3",
     "telegraf": "^4.4.0"
   }
 }

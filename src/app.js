@@ -2,7 +2,7 @@ const env = process.env
 const { chromium } = require('playwright')
 
 module.exports = async () => {
-  const browser = await chromium.launch()
+  const browser = await chromium.launch({ chromiumSandbox: false })
   const page = await browser.newPage()
   await page.goto('https://onlinesoccermanager.com/Login')
 
