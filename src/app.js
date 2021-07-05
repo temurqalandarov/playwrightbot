@@ -1,5 +1,5 @@
 const env = process.env
-const { chromium } = require('playwright')
+const { chromium } = require('playwright-chromium')
 
 module.exports = async () => {
   const browser = await chromium.launch({ chromiumSandbox: false })
