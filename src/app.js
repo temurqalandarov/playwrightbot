@@ -14,19 +14,16 @@ module.exports = async () => {
   await page.fill('#password', `${env.PASSWORD}`)
   await page.click('#login')
 
-  // await page.waitForSelector('.teamslot-container', { state: "visible" })
-  const k = await page.$$('.teamslot-container')
-  await k[1].click()
+  await page.waitForSelector('.teamslot-container', { state: "visible" })
+  await (await page.$$('.teamslot-container'))[1].click()
 
   await page.goto(`https://onlinesoccermanager.com/League/${env.NATIJA}`)
   // , { waitUntil: "domcontentloaded" }
   // await page.waitForSelector('.table', { state: "visible" })
 
   await page.screenshot({ path: './public/clip.png', fullPage: true, clip: { x: 10, y: 264, width: 833, height: 638 } })
-  // console.log(img)
 
   await browser.close()
-  // return img
 }
 
 // await page.screenshot({ path: './public/clip.png', fullPage: true, clip: { x: 10, y: 264, width: 833, height: 930 } })
