@@ -7,12 +7,11 @@ module.exports = async () => {
   await page.goto('https://onlinesoccermanager.com/Login')
 
   await page.click('.btn-new')
-  await page.click('.btn-alternative')
 
-  // await (await page.waitForSelector('.btn-alternative', { state: 'visible' })).click()
+  await (await page.waitForSelector('.btn-alternative', { state: 'visible' })).click()
 
-  await page.fill('#manager-name', 'webdev')
-  await page.fill('#password', '10122000timur')
+  await page.fill('#manager-name', `${env.NAME}`)
+  await page.fill('#password', `${env.PASSWORD}`)
   await page.click('#login')
 
   // await page.waitForSelector('.teamslot-container', { state: "visible" })
@@ -23,7 +22,7 @@ module.exports = async () => {
   // , { waitUntil: "domcontentloaded" }
   // await page.waitForSelector('.table', { state: "visible" })
 
-  const img = await page.screenshot({ path: './public/clip.png', fullPage: true, clip: { x: 10, y: 264, width: 833, height: 638 } })
+  await page.screenshot({ path: './public/clip.png', fullPage: true, clip: { x: 10, y: 264, width: 833, height: 638 } })
   // console.log(img)
 
   await browser.close()
