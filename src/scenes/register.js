@@ -7,7 +7,6 @@ const registerScene = new BaseScene('register')
   .enter(ctx => ctx.reply('Nikingizni kiriting'))
   .on('text', ctx => {
     mName = ctx.message.text
-    console.log(mName)
     ctx.scene.enter('password')
     return ctx.scene.leave()
   })

@@ -2,9 +2,8 @@ const { chromium } = require('playwright-chromium')
 const fs = require('fs');
 
 module.exports = async (name, password) => {
-  const browser = await chromium.launch()
+  const browser = await chromium.launch({ chromiumSandbox: false })
   const context = await browser.newContext()
-  // { chromiumSandbox: false }
   const page = await context.newPage()
   await page.goto('https://onlinesoccermanager.com')
 

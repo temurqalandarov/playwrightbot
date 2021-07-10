@@ -8,7 +8,6 @@ const passwordScene = new BaseScene('password')
   .enter(ctx =>
     ctx.reply('Parolingizni kiriting'))
   .on('text', async ctx => {
-    console.log(mName)
     await index(mName, ctx.message.text)
     return ctx.scene.leave()
   })

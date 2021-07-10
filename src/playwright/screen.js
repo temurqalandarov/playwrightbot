@@ -2,7 +2,7 @@ const { chromium } = require('playwright-chromium')
 const fs = require('fs');
 
 module.exports = async (name, slot, table) => {
-  const browser = await chromium.launch()
+  const browser = await chromium.launch({ chromiumSandbox: false })
   const context = await browser.newContext({ viewport: { width: 1120, height: 1800 } })
   // { chromiumSandbox: false }
 
