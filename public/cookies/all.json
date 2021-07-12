@@ -1,0 +1,182 @@
+[
+  {
+    "sameSite": "None",
+    "name": "DefaultCultureCode",
+    "value": "en-GB",
+    "domain": "www.onlinesoccermanager.com",
+    "path": "/",
+    "expires": 1657465204.413989,
+    "httpOnly": false,
+    "secure": true
+  },
+  {
+    "sameSite": "None",
+    "name": "isFromGdprOptInCountry",
+    "value": "false",
+    "domain": ".onlinesoccermanager.com",
+    "path": "/",
+    "expires": 2489842809,
+    "httpOnly": false,
+    "secure": true
+  },
+  {
+    "sameSite": "None",
+    "name": "CultureCode",
+    "value": "en-GB",
+    "domain": ".onlinesoccermanager.com",
+    "path": "/",
+    "expires": 1657465209,
+    "httpOnly": false,
+    "secure": true
+  },
+  {
+    "sameSite": "None",
+    "name": "personalizedAdsAskAmount",
+    "value": "1",
+    "domain": ".onlinesoccermanager.com",
+    "path": "/",
+    "expires": 1657465209,
+    "httpOnly": false,
+    "secure": true
+  },
+  {
+    "sameSite": "None",
+    "name": "isPrivacyNoticeAccepted",
+    "value": "true",
+    "domain": ".onlinesoccermanager.com",
+    "path": "/",
+    "expires": 1657465209,
+    "httpOnly": false,
+    "secure": true
+  },
+  {
+    "sameSite": "None",
+    "name": "shouldUpdateGdprDataStorageSetting",
+    "value": "true",
+    "domain": ".onlinesoccermanager.com",
+    "path": "/",
+    "expires": 1657465209,
+    "httpOnly": false,
+    "secure": true
+  },
+  {
+    "sameSite": "None",
+    "name": "personalizedAdsEnabled",
+    "value": "true",
+    "domain": ".onlinesoccermanager.com",
+    "path": "/",
+    "expires": 1657465209,
+    "httpOnly": false,
+    "secure": true
+  },
+  {
+    "sameSite": "None",
+    "name": "personalizedAdsSettingLastAskedTimestamp",
+    "value": "1625929209",
+    "domain": ".onlinesoccermanager.com",
+    "path": "/",
+    "expires": 1657465209,
+    "httpOnly": false,
+    "secure": true
+  },
+  {
+    "sameSite": "None",
+    "name": "DefaultCultureCode",
+    "value": "en-GB",
+    "domain": "osm.cloud",
+    "path": "/",
+    "expires": 1657465210.03275,
+    "httpOnly": false,
+    "secure": true
+  },
+  {
+    "sameSite": "None",
+    "name": "bugsnagSession",
+    "value": "{\"id\":\"ckqxw9sxg00003dbim4f15ygt\",\"startedAt\":\"2021-07-10T15:00:11.575Z\",\"events\":{\"handled\":0,\"unhandled\":0}}",
+    "domain": "www.onlinesoccermanager.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false
+  },
+  {
+    "sameSite": "None",
+    "name": "_ga",
+    "value": "GA1.2.996011974.1625929215",
+    "domain": ".onlinesoccermanager.com",
+    "path": "/",
+    "expires": 1689001214,
+    "httpOnly": false,
+    "secure": false
+  },
+  {
+    "sameSite": "None",
+    "name": "_gid",
+    "value": "GA1.2.752700269.1625929215",
+    "domain": ".onlinesoccermanager.com",
+    "path": "/",
+    "expires": 1626015614,
+    "httpOnly": false,
+    "secure": false
+  },
+  {
+    "sameSite": "None",
+    "name": "_dc_gtm_UA-21445918-9",
+    "value": "1",
+    "domain": ".onlinesoccermanager.com",
+    "path": "/",
+    "expires": 1625929274,
+    "httpOnly": false,
+    "secure": false
+  },
+  {
+    "sameSite": "None",
+    "name": "DefaultCultureCode",
+    "value": "en-GB",
+    "domain": "en.onlinesoccermanager.com",
+    "path": "/",
+    "expires": 1657465216.237227,
+    "httpOnly": false,
+    "secure": true
+  },
+  {
+    "sameSite": "None",
+    "name": "_ga",
+    "value": "GA1.3.996011974.1625929215",
+    "domain": ".en.onlinesoccermanager.com",
+    "path": "/",
+    "expires": 1689001219,
+    "httpOnly": false,
+    "secure": false
+  },
+  {
+    "sameSite": "None",
+    "name": "_gid",
+    "value": "GA1.3.752700269.1625929215",
+    "domain": ".en.onlinesoccermanager.com",
+    "path": "/",
+    "expires": 1626015619,
+    "httpOnly": false,
+    "secure": false
+  },
+  {
+    "sameSite": "None",
+    "name": "bugsnagSession",
+    "value": "{\"id\":\"ckqxw9wlg00003dbjg0esv7r5\",\"startedAt\":\"2021-07-10T15:00:16.325Z\",\"events\":{\"handled\":0,\"unhandled\":0}}",
+    "domain": "en.onlinesoccermanager.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false
+  },
+  {
+    "sameSite": "None",
+    "name": "HasLoggedInBefore",
+    "value": "True",
+    "domain": ".onlinesoccermanager.com",
+    "path": "/",
+    "expires": 1657465219.852191,
+    "httpOnly": false,
+    "secure": true
+  }
+]
