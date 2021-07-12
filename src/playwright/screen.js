@@ -4,7 +4,7 @@ const fs = require('fs');
 
 module.exports = async (id, slot, table) => {
   const browser = await chromium.launch({ chromiumSandbox: false })
-  const context = await browser.newContext({ viewport: { width: 1120, height: 1800 } })
+  const context = await browser.newContext({ viewport: { width: 1198, height: 1760 } })
   // { chromiumSandbox: false }
 
   const cookies = await User.findOne({ chat_id: `${id}` })
@@ -13,7 +13,7 @@ module.exports = async (id, slot, table) => {
   await context.addCookies(cookies.cookie)
 
   const page = await context.newPage()
-  await page.goto('https://onlinesoccermanager.com/Career', { waitUntil: 'networkidle' })
+  await page.goto('https://onlinesoccermanager.com/Career', { waitUntil: 'networkidle0' })
 
   // await page.waitForSelector('.teamslot-container', { state: "visible" })
   await (await page.$$('.teamslot-container'))[slot - 1].click()
