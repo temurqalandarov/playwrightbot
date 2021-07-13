@@ -2,7 +2,7 @@ const { chromium } = require('playwright-chromium')
 const fs = require('fs')
 
 module.exports = async (name, password) => {
-  const browser = await chromium.launch({ chromiumSandbox: false })
+  const browser = await chromium.launch()
   const context = await browser.newContext()
 
   const cookie = fs.readFileSync(`public/cookies/all.json`)

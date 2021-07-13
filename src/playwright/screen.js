@@ -3,7 +3,7 @@ const User = require('../db/models/user')
 const fs = require('fs');
 
 module.exports = async (id, slot, table) => {
-  const browser = await chromium.launch({ chromiumSandbox: false })
+  const browser = await chromium.launch()
   const context = await browser.newContext()
   // { chromiumSandbox: false }
 
@@ -25,12 +25,13 @@ module.exports = async (id, slot, table) => {
   // fs.writeFileSync(`public/cookies/slot.json`, cookieJson)
 
   await page.setViewportSize({
-    width: 1120,
-    height: 1770,
+    width: 1198,
+    height: 1780,
   })
 
-  await page.goto(`https://onlinesoccermanager.com/League/${table}`, { waitUntil: "networkidle" })
-  await (await page.$('.table')).screenshot({ path: './public/screenshots/clip.png' })
+  await page.goto(`https://onlinesoccermanager.com/League/${table}`, { waitUntil: "networkidle0" })
+  const element = await page.waitForSelector('.table')
+  await element.screenshot({ path: './public/screenshots/clip.png' })
 
   await browser.close()
 }
