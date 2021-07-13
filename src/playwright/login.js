@@ -1,4 +1,4 @@
-const { chromium } = require('playwright-chromium')
+const { chromium, errors } = require('playwright-chromium')
 const fs = require('fs')
 
 module.exports = async (name, password) => {
@@ -13,13 +13,21 @@ module.exports = async (name, password) => {
   await page.goto('https://onlinesoccermanager.com/Login')
   await (await page.waitForSelector('#manager-name', { state: 'visible' })).fill(name)
   await page.fill('#password', password)
-
   await page.press('body', 'Enter')
-  await page.waitForNavigation()
-  const cookies = await context.cookies()
 
-  await browser.close()
-  return cookies
+  try {
+    await page.waitForNavigation({ timeout: 15000 })
+    var login = await context.cookies()
+  }
+  catch (e) {
+    console.log(e)
+    // if (e instanceof errors.TimeoutError)
+    return 0
+  }
+  finally {
+    await browser.close()
+  }
+  return login
 }
 
   // const p = await page.evaluate(() => Array.from(document.querySelectorAll('.font-sm')).map(node => node.innerHTML))

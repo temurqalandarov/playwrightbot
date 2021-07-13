@@ -22,12 +22,10 @@
   },
   "homepage": "https://github.com/temurqalandarov/playwrightbot#readme",
   "dependencies": {
-    "bcrypt": "^5.0.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "mongoose": "^5.13.2",
     "playwright-chromium": "^1.12.3",
-    "request": "^2.88.2",
     "telegraf": "^4.0.3"
   }
 }

@@ -9,20 +9,22 @@ bot
   .use(stage.middleware())
 
 bot.start(async ctx => {
+  ctx.reply(`Salom <a href="tg://user?id=${ctx.message.from.id}">${ctx.message.from.first_name}</a>\n\nBotimizdan foydalanish uchun <b>FOM</b> akkauntingizni kiriting /login`, { parse_mode: 'HTML' })
+})
+
+bot.command('login', async ctx => {
   const id = await User.findOne({ chat_id: `${ctx.message.chat.id}` })
   if (!id)
     return await ctx.scene.enter('name')
-  await ctx.scene.enter('category')
+  ctx.reply('Siz <b>FOM</b> akkauntingizni kiritgansiz\n\nBosh menyuga o\'tish uchun👉 /menu', { parse_mode: 'HTML' })
 })
 
-// bot.catch((err) => {
-//   const message = err.stack || err
-//   console.log(message, err)
-//   bot.telegram.sendMessage(DEV_ID, message)
-// })
-
-// bot.command('register', ctx => { return ctx.scene.enter('register') })
-// bot.command('kirish', ctx => { return ctx.scene.enter('kirish') })
+bot.command('menu', async ctx => {
+  const id = await User.findOne({ chat_id: `${ctx.message.chat.id}` })
+  if (id)
+    return await ctx.scene.enter('category')
+  ctx.reply('Siz <b>FOM</b> akkauntingizni kiritmagansiz\n\nAkkauntingizni kiritish uchun👉 /login', { parse_mode: 'HTML' })
+})
 
 module.exports = {
   bot
