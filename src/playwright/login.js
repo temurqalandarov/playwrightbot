@@ -3,7 +3,6 @@ const fs = require('fs')
 
 module.exports = async (name, password) => {
   const browser = await chromium.launch({ chromiumSandbox: false })
-
   const context = await browser.newContext()
 
   const cookie = fs.readFileSync(`public/cookies/all.json`)
