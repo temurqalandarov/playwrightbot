@@ -2,7 +2,7 @@ const { chromium } = require('playwright-chromium')
 const User = require('../db/models/user')
 
 module.exports = async (id, slot, table) => {
-  const browser = await chromium.launch()
+  const browser = await chromium.launch({ chromiumSandbox: false })
   try {
     switch (table) {
       case 'Natijalar':

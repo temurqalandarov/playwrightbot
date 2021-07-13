@@ -1,8 +1,8 @@
-const { chromium, errors } = require('playwright-chromium')
+const { chromium } = require('playwright-chromium')
 const fs = require('fs')
 
 module.exports = async (name, password) => {
-  const browser = await chromium.launch()
+  const browser = await chromium.launch({ chromiumSandbox: false })
   const context = await browser.newContext()
   const cookie = fs.readFileSync(`public/cookies/all.json`)
 
@@ -21,7 +21,6 @@ module.exports = async (name, password) => {
   }
   catch (e) {
     console.log(e)
-    // if (e instanceof errors.TimeoutError)
     return 0
   }
   finally {
@@ -29,9 +28,3 @@ module.exports = async (name, password) => {
   }
   return login
 }
-
-  // const p = await page.evaluate(() => Array.from(document.querySelectorAll('.font-sm')).map(node => node.innerHTML))
-  // const q = await page.evaluate(() => Array.from(document.querySelectorAll('.text-nowrap')).map(node => node.innerHTML))
-  // const p = await page.evaluate(() => Array.from(document.querySelectorAll('.font-sm')).map(node => node.innerHTML))
-  // const q = await page.evaluate(() => Array.from(document.querySelectorAll('.referee-name')).map(node => node.innerHTML))
-  // const o = await page.evaluate(() => Array.from(document.querySelectorAll('.alt-image')).map(node => node.alt))
