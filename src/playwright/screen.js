@@ -21,7 +21,9 @@ module.exports = async (id, slot, table) => {
     await context.addCookies(cookies.cookie)
     const page = await context.newPage()
     await page.goto('https://onlinesoccermanager.com/Career')
-
+    const claim = await page.$('#claim-achievement-btn')
+    if (claim)
+      await page.click('#claim-achievement-btn')
     await page.waitForSelector('.teamslot-container', { state: "visible" })
     await (await page.$$('.teamslot-container'))[slot - 1].click()
 
@@ -31,14 +33,15 @@ module.exports = async (id, slot, table) => {
     })
     await page.goto(`https://onlinesoccermanager.com/League/${table}`, { waitUntil: "networkidle" })
     const element = await page.waitForSelector('.table')
-    await element.screenshot({ path: './public/screenshots/clip.png' })
+    var image = await element.screenshot({ encoding: 'base64' })
   }
   catch (e) {
     console.log(e)
-    return 1
+    return 0
   }
   finally {
     await browser.close()
   }
+  return image
 }
 

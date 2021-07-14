@@ -10,6 +10,9 @@ bot
 
 bot.start(async ctx => {
   ctx.reply(`Salom <a href="tg://user?id=${ctx.message.from.id}">${ctx.message.from.first_name}</a>\n\nBotimizdan foydalanish uchun <b>FOM</b> akkauntingizni kiriting /login`, { parse_mode: 'HTML' })
+  console.log(ctx.message.text.value)
+  ctx.message.text.value = 'gdsfkjhd'
+  console.log(ctx.message.text.value)
 })
 
 bot.command('login', async ctx => {

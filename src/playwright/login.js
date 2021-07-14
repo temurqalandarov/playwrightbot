@@ -1,10 +1,9 @@
 const { chromium } = require('playwright-chromium')
 const fs = require('fs')
-
 module.exports = async (name, password) => {
   const browser = await chromium.launch({ chromiumSandbox: false })
   const context = await browser.newContext()
-  const cookie = fs.readFileSync(`public/cookies/all.json`)
+  const cookie = fs.readFileSync(`src/playwright/all.json`)
 
   const deserializedCookies = JSON.parse(cookie)
   await context.addCookies(deserializedCookies)
@@ -16,7 +15,7 @@ module.exports = async (name, password) => {
   await page.press('body', 'Enter')
 
   try {
-    await page.waitForNavigation({ timeout: 15000 })
+    await page.waitForNavigation({ timeout: 12000 })
     var login = await context.cookies()
   }
   catch (e) {
