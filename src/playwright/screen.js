@@ -2,7 +2,7 @@ const { chromium } = require('playwright-chromium')
 const User = require('../db/models/user')
 
 module.exports = async (id, slot, table) => {
-  const browser = await chromium.launch({ chromiumSandbox: false })
+  const browser = await chromium.launch({ headless: false })
   try {
     switch (table) {
       case 'Natijalar':
@@ -32,7 +32,7 @@ module.exports = async (id, slot, table) => {
       height: 1780,
     })
     await page.goto(`https://onlinesoccermanager.com/League/${table}`, { waitUntil: "networkidle" })
-    const element = await page.waitForSelector('.table')
+    const element = await page.waitForSelector('.table', { state: 'visible' })
     var image = await element.screenshot({ encoding: 'base64' })
   }
   catch (e) {
